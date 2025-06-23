@@ -16,43 +16,40 @@
  
 import ballerina/test;
 import ballerina/io;
+
 //import ballerina/http;
 
 // Configs for live vs mock
 configurable boolean isLiveServer = ?;
-configurable string originalId = ?;
-configurable string clientId = ?;
-configurable string clientSecret = ?;
-configurable string accountId= ?; 
+configurable string originalId = ?; 
 configurable string userId =  isLiveServer? originalId:  "test";
 configurable string serviceUrl = isLiveServer ? "https://api.zoom.us/v2" : "http://localhost:9090";
-configurable string tokenFilePath =  ?;
+configurable string token =  ?;
+configurable string clientId = ?;
+configurable string clientSecret = ?;
+configurable string refreshUrl = ?;
 
 
 
-string token = "mock_token";
 
 
 
 // Create an HTTP client
-ConnectionConfig config = {auth: {token}};
-final Client zoomClient = check loadAccessToken();
-int meetingId =  89292999022;
+//ConnectionConfig config = {auth: {token}};
 
-
-function loadAccessToken() returns Client|error {
-    string token_use = token;
-    if isLiveServer {
-        string|error tokenResult = io:fileReadString(tokenFilePath);
-        if tokenResult is string {
-            token_use = tokenResult.trim();
-        } else {
-            return error("Unable to read token file: " + tokenResult.toString());
-        }
+ConnectionConfig config = {
+    auth: {
+        refreshToken: token,
+        clientId: clientId,
+        clientSecret: clientSecret,
+        refreshUrl: refreshUrl
     }
+};
 
-    return check new Client({auth:{token:token_use}}, serviceUrl);
-}
+final Client zoomClient = check new Client(config, serviceUrl);
+int meetingId = 85029152622;
+
+
 
 //List the Meetings
 @test:Config {
