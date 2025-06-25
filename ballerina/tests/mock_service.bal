@@ -17,7 +17,6 @@
 import ballerina/http;
 
 service / on new http:Listener(9090) {
-
     resource function get users/[string userId]/meetings() returns InlineResponse20028|error {
         return {
             pageNumber: 1,
@@ -39,6 +38,7 @@ service / on new http:Listener(9090) {
 
     resource function get meetings/[int meetingId]() returns InlineResponse20013|error {
         return {
+            topic: "Updated New Meeting",
             'type: 2,
             preSchedule: false
         };
