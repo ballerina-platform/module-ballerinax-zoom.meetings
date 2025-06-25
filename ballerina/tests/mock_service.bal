@@ -41,9 +41,7 @@ service / on new http:Listener(9090) {
         return {
             'type: 2,
             preSchedule: false
-
         };
-
     }
 
     resource function patch meetings/[int meetingId]() returns error? {
@@ -76,6 +74,5 @@ service / on new http:Listener(9090) {
             ]
         };
     }
-
 };
 
