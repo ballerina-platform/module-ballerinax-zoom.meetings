@@ -1,4 +1,4 @@
-_Author_:  Laavanja19 \
+_Author_:  @Laavanja19 \
 _Created_: 2025/06/24 \
 _Updated_: 2025/06/24 \
 _Edition_: Swan Lake
