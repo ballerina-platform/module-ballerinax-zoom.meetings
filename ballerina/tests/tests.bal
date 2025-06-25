@@ -40,7 +40,6 @@ int meetingId = 85479942797;
 @test:Config {
     groups: ["live_tests", "mock_tests"]
 }
-
 function testListMeetings() returns error? {
     InlineResponse20028 response = check zoomClient->/users/[userId]/meetings();
     test:assertTrue(response is InlineResponse20028, msg = "Response should be InlineResponse20028");
@@ -49,7 +48,6 @@ function testListMeetings() returns error? {
 @test:Config {
     groups: ["live_tests", "mock_tests"]
 }
-
 function testCreateMeeting() returns error? {
     InlineResponse2018 response = check zoomClient->/users/[userId]/meetings.post(
         payload = {
@@ -72,7 +70,6 @@ function testCreateMeeting() returns error? {
 function testGetMeeting() returns error? {
     InlineResponse20013 response = check zoomClient->/meetings/[meetingId]();
     test:assertTrue(response is InlineResponse20013, msg = "Response should be InlineResponse20013");
-
 }
 
 @test:Config {
@@ -93,7 +90,6 @@ function testUpdateMeeting() returns error? {
     groups: ["live_tests", "mock_tests"],
     dependsOn: [testCreateMeeting, testUpdateMeeting, testGetMeeting, testGetMeetingInvitation]
 }
-
 function testDeleteMeeting() returns error? {
     error? response = zoomClient->/meetings/[meetingId].delete();
     test:assertTrue(response is (), msg = "Delete should succeed with no error (HTTP 204 or 200)");
@@ -103,7 +99,6 @@ function testDeleteMeeting() returns error? {
     groups: ["live_tests", "mock_tests"],
     dependsOn: [testCreateMeeting, testUpdateMeeting, testGetMeeting]
 }
-
 function testGetMeetingInvitation() returns error? {
     MeetingInvitation response = check zoomClient->/meetings/[meetingId]/invitation();
     test:assertTrue(response is MeetingInvitation, msg = "Response should be MeetingInvitation");
@@ -113,9 +108,7 @@ function testGetMeetingInvitation() returns error? {
     groups: ["live_tests", "mock_tests"],
     dependsOn: [testCreateMeeting]
 }
-
 function testListUpcomingMeetings() returns error? {
     InlineResponse20029 response = check zoomClient->/users/[userId]/upcoming_meetings();
     test:assertTrue(response is InlineResponse20029, msg = "Response should be InlineResponse20029");
 }
-
