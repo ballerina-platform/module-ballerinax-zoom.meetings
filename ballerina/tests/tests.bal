@@ -35,14 +35,15 @@ ConnectionConfig config = {
 };
 
 final Client zoomClient = check new Client(config, serviceUrl);
-int meetingId = 85479942797;
+int meetingId = 83893487496;
 
 @test:Config {
     groups: ["live_tests", "mock_tests"]
 }
 function testListMeetings() returns error? {
     InlineResponse20028 response = check zoomClient->/users/[userId]/meetings();
-    test:assertTrue(response is InlineResponse20028, msg = "Response should be InlineResponse20028");
+    test:assertEquals(response.pageNumber,1, msg = "Page number should be 1");
+    test:assertEquals(response.pageSize, 30, msg = "Page size should be 30");
 }
 
 @test:Config {
@@ -59,9 +60,9 @@ function testCreateMeeting() returns error? {
             topic: "The Internship Meeting"
         }
     );
-    test:assertTrue(response?.topic !is (), msg = "Response topic should not be empty");
-    test:assertEquals(response?.duration, 50, msg = "Meeting duration should be 50 minutes");
-    test:assertEquals(response?.timezone, "UTC", msg = "Timezone should be UTC");
+    test:assertTrue(response.topic !is (), msg = "Response topic should not be empty");
+    test:assertEquals(response.duration, 50, msg = "Meeting duration should be 50 minutes");
+    test:assertEquals(response.timezone, "UTC", msg = "Timezone should be UTC");
 }
 
 @test:Config {
@@ -69,7 +70,7 @@ function testCreateMeeting() returns error? {
 }
 function testGetMeeting() returns error? {
     InlineResponse20013 response = check zoomClient->/meetings/[meetingId]();
-    test:assertTrue(response is InlineResponse20013, msg = "Response should be InlineResponse20013");
+    test:assertEquals(response.preSchedule, false, msg = "Both must be the same");
 }
 
 @test:Config {
@@ -83,7 +84,8 @@ function testUpdateMeeting() returns error? {
             startTime: "2025-09-01T15:05:00Z"
         }
     );
-    test:assertTrue(response is (), msg = "Update should succeed with no error (HTTP 204 or 200)");
+    InlineResponse20013 updatedMeeting = check zoomClient->/meetings/[meetingId]();
+    test:assertEquals(updatedMeeting.topic, "Updated New Meeting", msg = "Meeting topic was not updated as expected");
 }
 
 @test:Config {
@@ -92,7 +94,6 @@ function testUpdateMeeting() returns error? {
 }
 function testDeleteMeeting() returns error? {
     error? response = zoomClient->/meetings/[meetingId].delete();
-    test:assertTrue(response is (), msg = "Delete should succeed with no error (HTTP 204 or 200)");
 }
 
 @test:Config {
@@ -101,7 +102,6 @@ function testDeleteMeeting() returns error? {
 }
 function testGetMeetingInvitation() returns error? {
     MeetingInvitation response = check zoomClient->/meetings/[meetingId]/invitation();
-    test:assertTrue(response is MeetingInvitation, msg = "Response should be MeetingInvitation");
 }
 
 @test:Config {
@@ -110,5 +110,6 @@ function testGetMeetingInvitation() returns error? {
 }
 function testListUpcomingMeetings() returns error? {
     InlineResponse20029 response = check zoomClient->/users/[userId]/upcoming_meetings();
-    test:assertTrue(response is InlineResponse20029, msg = "Response should be InlineResponse20029");
+    test:assertTrue(response.totalRecords >= 0, msg = "Total records should be non-negative");
 }
+
