@@ -20,14 +20,14 @@ configurable boolean isLiveServer = ?;
 configurable string originalId = ?;
 configurable string userId = isLiveServer ? originalId : "test";
 configurable string serviceUrl = isLiveServer ? "https://api.zoom.us/v2" : "http://localhost:9090";
-configurable string token = ?;
+configurable string refreshToken = ?;
 configurable string clientId = ?;
 configurable string clientSecret = ?;
 configurable string refreshUrl = ?;
 
 ConnectionConfig config = {
     auth: {
-        refreshToken: token,
+        refreshToken,
         clientId,
         clientSecret,
         refreshUrl

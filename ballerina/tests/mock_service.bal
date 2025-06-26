@@ -21,7 +21,6 @@ service / on new http:Listener(9090) {
         return {
             pageNumber: 1,
             pageSize: 30
-
         };
     }
 
@@ -44,13 +43,9 @@ service / on new http:Listener(9090) {
         };
     }
 
-    resource function patch meetings/[int meetingId]() returns error? {
-        return;
-    }
+    resource function patch meetings/[int meetingId]() returns error? {}
 
-    resource function delete meetings/[int meetingId]() returns error? {
-        return;
-    }
+    resource function delete meetings/[int meetingId]() returns error? {}
 
     resource function get meetings/[int meetingId]/invitation() returns MeetingInvitation|error {
         return {
