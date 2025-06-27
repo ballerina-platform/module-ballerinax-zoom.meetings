@@ -1,0 +1,15 @@
+[package]
+org = "laavanja"
+name = "list_all_meetings"
+version = "0.1.0"
+distribution = "2201.12.7"
+
+[build-options]
+observabilityIncluded = true
+
+[[dependency]]
+org = "ballerinax"
+name = "zoom.meetings"
+version = "1.0.0"
+repository = "local"
+
