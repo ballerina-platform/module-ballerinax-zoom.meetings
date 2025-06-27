@@ -43,7 +43,7 @@ ConnectionConfig config = isLiveServer
 
 final Client zoomClient = check new Client(config, serviceUrl);
 
-int meetingId = 85793105951;
+int meetingId = 87163296266;
 
 @test:Config {
     groups: ["live_tests", "mock_tests"]
