@@ -16,26 +16,34 @@
 
 import ballerina/test;
 
-configurable boolean isLiveServer = ?;
-configurable string originalId = ?;
+configurable boolean isLiveServer = false;
+configurable string originalId = "me";
 configurable string userId = isLiveServer ? originalId : "test";
 configurable string serviceUrl = isLiveServer ? "https://api.zoom.us/v2" : "http://localhost:9090";
-configurable string refreshToken = ?;
-configurable string clientId = ?;
-configurable string clientSecret = ?;
-configurable string refreshUrl = ?;
+configurable string refreshToken = "mockRefreshToken";
+configurable string clientId = "mockClientId";
+configurable string clientSecret = "mockClientSecret";
+configurable string refreshUrl = "mockUrl";
 
-ConnectionConfig config = {
-    auth: {
-        refreshToken,
-        clientId,
-        clientSecret,
-        refreshUrl
+ConnectionConfig config = isLiveServer
+    ? {
+        auth: {
+            refreshToken,
+            clientId,
+            clientSecret,
+            refreshUrl
+        }
     }
-};
+    :
+    {
+        auth: {
+            token: "mock-token"
+        }
+    };
 
 final Client zoomClient = check new Client(config, serviceUrl);
-int meetingId = 83893487496;
+
+int meetingId = 85793105951;
 
 @test:Config {
     groups: ["live_tests", "mock_tests"]
