@@ -73,10 +73,10 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
          * `YOUR_REDIRECT_URI` with your configured redirect URI
 
 ### Step 5: Verify Your Setup
-      ```curl
+   ```curl
       curl -X GET "https://api.zoom.us/v2/users/me" \
       -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
-      ```
+   ```
       
    This will give you the user ID needed for API calls.
 
@@ -124,7 +124,7 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
 
    Now, utilize the available connector operations.
 
-      ```ballerina
+   ```ballerina
       meetings:InlineResponse20028 response = check zoomClient->/users/[originalId]/meetings();
          meetings:InlineResponse20028Meetings[]? meetings = response.meetings;
          if meetings is () {
@@ -138,21 +138,21 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
                   io:println("-------------------------------");
             }
          }
-      ```
+   ```
 
 ### Step 4: Run the Ballerina application
 
-      ```bash
+   ```bash
       bal run
-      ```
+   ```
 
 ## Examples
 
-The `Zoom Meetings` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/), covering the following use cases:
+The `Zoom Meetings` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/examples/), covering the following use cases:
 
-1. [Create a Zoom meeting](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/create-new-meeting) – Creates a new Zoom meeting using the API. 
+1. [Create a Zoom meeting](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/examples/create-new-meeting) – Creates a new Zoom meeting using the API. 
 
-2. [List scheduled meetings](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/list-all-meetings) – Displays the list of meetings scheduled under a specified Zoom user account. 
+2. [List scheduled meetings](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/examples/list-all-meetings) – Displays the list of meetings scheduled under a specified Zoom user account. 
 
 ### Setting up the prerequisites
 1. Download and install Java SE Development Kit (JDK) version 21. You can download it from either of the following sources:
