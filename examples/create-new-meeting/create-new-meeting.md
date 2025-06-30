@@ -6,7 +6,7 @@ This example demonstrates how the **Zoom Meetings API** can be used to **create 
 
 **1. Setup Zoom developer account**
 
-Refer to the [Setup guide](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/README.md) to obtain necessary credentials (client Id, client secret, tokens).
+Refer to the [Setup guide](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/README.md) to obtain necessary credentials (client Id, client secret, tokens).
 
 **2. Configuration**
 

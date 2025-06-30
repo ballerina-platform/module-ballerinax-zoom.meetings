@@ -67,10 +67,10 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
          * `YOUR_REDIRECT_URI` with your configured redirect URI
 
 ### Step 5: Verify Your Setup
-      ```curl
+   ```curl
       curl -X GET "https://api.zoom.us/v2/users/me" \
       -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
-      ```
+   ```
       
    This will give you the user ID needed for API calls.
 
@@ -118,7 +118,7 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
 
    Now, utilize the available connector operations.
 
-      ```ballerina
+   ```ballerina
       meetings:InlineResponse20028 response = check zoomClient->/users/[originalId]/meetings();
          meetings:InlineResponse20028Meetings[]? meetings = response.meetings;
          if meetings is () {
@@ -132,13 +132,13 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
                   io:println("-------------------------------");
             }
          }
-      ```
+   ```
 
 ### Step 4: Run the Ballerina application
 
-      ```bash
+   ```bash
       bal run
-      ```
+   ```
 
 ## Examples
 

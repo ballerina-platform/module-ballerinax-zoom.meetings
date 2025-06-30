@@ -3,7 +3,7 @@
 ## Prerequisites
 You need a Access token from Zoom developer account.
 
-To do this, refer to [Ballerina Zoom Connector](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/README.md).
+To do this, refer to [Ballerina Zoom Connector](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/README.md).
 
 And You need Find Your User ID to run some of the tests by running this curl command.
 ```curl
