@@ -15,6 +15,10 @@ The `ballerinax/zoom.meetings` connector provides practical examples illustratin
 3. For each example, create a `Config.toml` file the related configuration. Here's an example of how your `Config.toml` file should look:
     ```bash 
     refreshToken = "<refresh Token>"
+    refreshUrl = "<refresh URL>"
+    userId="<user_id>"
+    clientId = "<client_id>"
+    clientSecret = "<client_secret>"
     ```
 
 ## Running an example
