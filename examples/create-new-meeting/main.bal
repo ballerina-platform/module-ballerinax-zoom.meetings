@@ -17,7 +17,6 @@
 import ballerina/io;
 import ballerinax/zoom.meetings;
 
-configurable boolean isLiveServer = ?;
 configurable string originalId = ?;
 configurable string clientId = ?;
 configurable string clientSecret = ?;
@@ -36,10 +35,10 @@ final meetings:Client zoomClient = check new ({
 public function main() returns error? {
     meetings:InlineResponse2018 meetingDetails = check zoomClient->/users/[originalId]/meetings.post(
         payload = {
-            topic: "Ballerina Internship Meeting",
+            topic: "Ballerina New Internship Meeting",
             'type: 2, 
             preSchedule: false,
-            startTime: "2025-07-05T10:00:00Z",
+            startTime: "2025-07-10T10:00:00Z",
             duration: 30,
             timezone: "UTC"
         }
