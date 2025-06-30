@@ -138,7 +138,6 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
       bal run
       ```
 
-
 ## Examples
 
 The `Zoom Meetings` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/), covering the following use cases:
