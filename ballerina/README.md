@@ -94,6 +94,10 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
 
       ```bash
       refreshToken = "<refresh Token>"
+      refreshUrl = "<refresh URL>"
+      userId="<user_id>"
+      clientId = "<client_id>"
+      clientSecret = "<client_secret>"
       ```
 
    2. Create a `zoom.meeting:ConnectionConfig` with the obtained access token and initialize the connector with it.
@@ -142,6 +146,6 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
 
 The `Zoom Meetings` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/), covering the following use cases:
 
-1. [Create a Zoom meeting](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/create-new-meeting) – Creates a new Zoom meeting using the API. 
+1. [**Create a Zoom meeting**](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/create-new-meeting) – Creates a new Zoom meeting using the API. 
 
-2. [List scheduled meetings](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/list-all-meetings) – Displays the list of meetings scheduled under a specified Zoom user account. 
+2. [**List scheduled meetings**](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/list-all-meetings) – Displays the list of meetings scheduled under a specified Zoom user account. 
