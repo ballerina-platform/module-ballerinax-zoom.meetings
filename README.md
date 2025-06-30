@@ -99,7 +99,7 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
       ```bash
       refreshToken = "<refresh Token>"
       refreshUrl = "<refresh URL>"
-      originalId="<user_id>"
+      userId="<user_id>"
       clientId = "<client_id>"
       clientSecret = "<client_secret>"
       ```
