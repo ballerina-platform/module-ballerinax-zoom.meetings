@@ -17,7 +17,7 @@
 import ballerina/io;
 import ballerinax/zoom.meetings;
 
-configurable string originalId = ?;
+configurable string userId = ?;
 configurable string clientId = ?;
 configurable string clientSecret = ?;
 configurable string refreshUrl = ?;
@@ -33,7 +33,7 @@ final meetings:Client zoomClient = check new ({
 });
 
 public function main() returns error? {
-    meetings:InlineResponse2018 meetingDetails = check zoomClient->/users/[originalId]/meetings.post(
+    meetings:InlineResponse2018 meetingDetails = check zoomClient->/users/[userId]/meetings.post(
         payload = {
             topic: "Ballerina New Internship Meeting",
             'type: 2, 
