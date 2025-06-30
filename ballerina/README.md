@@ -1,5 +1,3 @@
-# Ballerina Zoom Meetings connector
-
 ## Overview
 [Zoom](https://www.zoom.com/) is a widely-used video conferencing service provided by Zoom Video Communications, enabling users to host and attend virtual meetings, webinars, and collaborate online.
 
@@ -144,8 +142,8 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
 
 ## Examples
 
-The `Zoom Meetings` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/), covering the following use cases:
+The `Zoom Meetings` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/examples/), covering the following use cases:
 
-1. [**Create a Zoom meeting**](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/create-new-meeting) – Creates a new Zoom meeting using the API. 
+1. [**Create a Zoom meeting**](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/examples/create-new-meeting) – Creates a new Zoom meeting using the API. 
 
-2. [**List scheduled meetings**](https://github.com/module-ballerinax-zoom.meetings/tree/main/examples/list-all-meetings) – Displays the list of meetings scheduled under a specified Zoom user account. 
+2. [**List scheduled meetings**](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/examples/list-all-meetings) – Displays the list of meetings scheduled under a specified Zoom user account. 
