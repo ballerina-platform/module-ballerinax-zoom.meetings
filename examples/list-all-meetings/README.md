@@ -14,6 +14,10 @@ Create a `Config.toml` file in the example's root directory and, provide your Zo
 
 ```bash 
 refreshToken = "<refresh Token>"
+refreshUrl = "<refresh URL>"
+originalId="<user_id>"
+clientId = "<client_id>"
+clientSecret = "<client_secret>"
 ```
 
 ## Run the example
