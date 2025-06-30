@@ -17,7 +17,7 @@
 import ballerina/io;
 import ballerinax/zoom.meetings;
 
-configurable string originalId = ?;
+configurable string userId = ?;
 configurable string clientId = ?;
 configurable string clientSecret = ?;
 configurable string refreshUrl = ?;
@@ -33,7 +33,7 @@ final meetings:Client zoomClient = check new ({
 });
 
 public function main() returns error? {
-    meetings:InlineResponse20028 response = check zoomClient->/users/[originalId]/meetings();
+    meetings:InlineResponse20028 response = check zoomClient->/users/[userId]/meetings();
     meetings:InlineResponse20028Meetings[]? meetings = response.meetings;
     if meetings is () {
         io:println("No upcoming meetings found.");
