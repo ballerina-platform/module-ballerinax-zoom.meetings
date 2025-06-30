@@ -98,6 +98,10 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
 
       ```bash
       refreshToken = "<refresh Token>"
+      refreshUrl = "<refresh URL>"
+      originalId="<user_id>"
+      clientId = "<client_id>"
+      clientSecret = "<client_secret>"
       ```
 
    2. Create a `zoom.meeting:ConnectionConfig` with the obtained access token and initialize the connector with it.
@@ -198,11 +202,17 @@ Execute the commands below to build from the source.
    ./gradlew clean build -PpublishToCentral=true
    ```
 ## Contribute to Ballerina
+
 As an open-source project, Ballerina welcomes contributions from the community.
+
 For more information, go to the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md).
+
 ## Code of conduct
+
 All the contributors are encouraged to read the [Ballerina Code of Conduct](https://ballerina.io/code-of-conduct).
+
 ## Useful links
+
 * For more information go to the [`zoom.meetings` package](https://central.ballerina.io/ballerinax/zoom.meetings/latest).
 * For example demonstrations of the usage, go to [Ballerina By Examples](https://ballerina.io/learn/by-example/).
 * Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
