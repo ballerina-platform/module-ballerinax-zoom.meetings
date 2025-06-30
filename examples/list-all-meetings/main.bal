@@ -17,7 +17,6 @@
 import ballerina/io;
 import ballerinax/zoom.meetings;
 
-configurable boolean isLiveServer = ?;
 configurable string originalId = ?;
 configurable string clientId = ?;
 configurable string clientSecret = ?;
