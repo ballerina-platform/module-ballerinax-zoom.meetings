@@ -1,4 +1,4 @@
-# Zoom Meetings - List all Meetings
+# Zoom Meetings - List all meetings
 
 This example demonstrates how to **retrieve and list all Zoom meetings** for a given user using the Zoom Meetings API. This is useful for displaying scheduled meetings, integrating with dashboards, or building internal tools for scheduling visibility.
 
@@ -15,7 +15,7 @@ Create a `Config.toml` file in the example's root directory and, provide your Zo
 ```bash 
 refreshToken = "<refresh Token>"
 refreshUrl = "<refresh URL>"
-userId="<user_id>"
+userId = "<user_id>"
 clientId = "<client_id>"
 clientSecret = "<client_secret>"
 ```
