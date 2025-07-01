@@ -1,4 +1,4 @@
-# Running Tests
+# Running tests
 
 ## Prerequisites
 You need a Access token from Zoom developer account.
@@ -11,7 +11,7 @@ curl -X GET "https://api.zoom.us/v2/users/me" \
 -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
-# Running Tests
+# Running tests
 
 There are two test environments for running the Zoom connector tests. The default test environment is the mock server for Zoom API. The other test environment is the actual Zoom API. 
 
@@ -19,16 +19,16 @@ You can run the tests in either of these environments and each has its own compa
 
  Test Groups | Environment                                       
 -------------|---------------------------------------------------
- mock_tests  | Mock server for Zoom API (Defualt Environment) 
+ mock_tests  | Mock server for Zoom API (Default Environment) 
  live_tests  | Zoom API                                       
 
-## Running Tests in the Mock Server
+## Running tests in the mock server
 
 To execute the tests on the mock server, ensure that the `IS_LIVE_SERVER` environment variable is either set to `false` or unset before initiating the tests. 
 
 This environment variable can be configured within the `Config.toml` file located in the tests directory or specified as an environmental variable.
 
-#### Using a Config.toml File
+#### Using a Config.toml file
 
 Create a `Config.toml` file in the tests directory and the following content:
 
@@ -36,7 +36,7 @@ Create a `Config.toml` file in the tests directory and the following content:
 isLiveServer = false
 ```
 
-#### Using Environment Variables
+#### Using environment variables
 
 Alternatively, you can set your authentication credentials as environment variables:
 If you are using linux or mac, you can use following method:
@@ -53,7 +53,7 @@ Then, run the following command to run the tests:
    ./gradlew clean test
 ```
 
-## Running Tests Against Zoom Live API
+## Running tests against Zoom Live API
 
 #### Using a Config.toml File
 
@@ -68,7 +68,7 @@ Create a `Config.toml` file in the tests directory and add your authentication c
    userId = "user_id_from_step5"
 ```
 
-#### Using Environment Variables
+#### Using environment variables
 
 Alternatively, you can set your authentication credentials as environment variables:
 If you are using linux or mac, you can use following method:
