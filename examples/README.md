@@ -10,7 +10,7 @@ The `ballerinax/zoom.meetings` connector provides practical examples illustratin
 
 1. Create a Zoom account by clicking the Sign Up link here: https://marketplace.zoom.us/. Once you activate your account, you’ll be ready to join as a developer.
 
-2. Generate credentials to authenticate the connector as described in the [Setup guide](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/README.md).
+2. Generate credentials to authenticate the connector as described in the [Setup guide](https://github.com/ballerina-platform/module-ballerinax-zoom.meetings/tree/main/README.md).
 
 3. For each example, create a `Config.toml` file the related configuration. Here's an example of how your `Config.toml` file should look:
     ```bash 

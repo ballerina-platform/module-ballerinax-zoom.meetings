@@ -12,11 +12,11 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
 
    2. Click "Develop" → "Build App"
 
-      [Zoom Marketplace](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/build-app.png)
+      ![Zoom Marketplace](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/build-app.png)
 
    3. Choose **"General App"** app type (for user authorization with refresh tokens)
 
-      [App Type](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/general-app.png)
+      ![App Type](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/general-app.png)
    
 
    4. Fill in Basic Information, choose Admin-managed option.
@@ -27,14 +27,14 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
       * Client ID
       * Client Secret
 
-      [App Credentials](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-credentials.png)
+      ![App Credentials](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-credentials.png)
       
    2. **Set Redirect URI**: Add your application's redirect URI
 
    3. **Add Scopes**: Make sure your Zoom app has the necessary scopes for the Scheduler API:
       * Add `scheduler:read`, `scheduler:write` and `user:read` in the scope
 
-      [App Scopes](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-scopes.png)
+      ![App Scopes](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-scopes.png)
 
 ### Step 3: Activate the App
  
