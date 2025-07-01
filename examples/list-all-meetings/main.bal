@@ -46,6 +46,21 @@ public function main() returns error? {
             io:println("-------------------------------");
         }
     }
+    meetings:InlineResponse20028Meetings firstMeeting = meetings[0];
+    int meetingId = <int>firstMeeting.id;
+    error? updateResult = zoomClient->/meetings/[meetingId].patch(
+        payload = {
+            topic: "Updated Topic via Test Ballerina",
+            startTime: "2025-09-01T15:05:00Z"
+        }
+    );
+    if updateResult is error {
+        io:println("Failed to update meeting: ", updateResult.message());
+    } else {
+        io:println("Meeting ", meetingId, " successfully updated.");
+    }
+    meetings:InlineResponse20013 updatedMeeting = check zoomClient->/meetings/[meetingId]();
+    io:println("Updated Topic: ", updatedMeeting.topic);
 }
 
 
