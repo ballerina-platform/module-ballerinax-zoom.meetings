@@ -29,15 +29,15 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
 
 ### Step 2: Configure OAuth settings
 
-   1. **Note down your credentials**:
+   1. **Note down your credentials:**
       * Client ID
       * Client Secret
 
       ![App Credentials](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-credentials.png)
       
-   2. **Set Redirect URI**: Add your application's redirect URI
+   2. **Set Redirect URI:** Add your application's redirect URI
 
-   3. **Add scopes**: Make sure your Zoom app has the necessary scopes for the meetings API:
+   3. **Add scopes:** Make sure your Zoom app has the necessary scopes for the meetings API:
       * Add `meetings:read`, `meetings:write` and `user:read` in the scope
 
       ![App Scopes](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-scopes.png)
@@ -57,7 +57,7 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
 
    2. **User authorizes the app** and gets redirected to your callback URL with an authorization code
 
-   3. **Exchange authorization code for tokens**:
+   3. **Exchange authorization code for tokens:**
       ```curl
       curl -X POST https://zoom.us/oauth/token \
       -H "Authorization: Basic $(echo -n 'CLIENT_ID:CLIENT_SECRET' | base64)" \
