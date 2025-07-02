@@ -1,7 +1,7 @@
 ## Overview
 [Zoom](https://www.zoom.com/) is a widely-used video conferencing service provided by Zoom Video Communications, enabling users to host and attend virtual meetings, webinars, and collaborate online.
 
-The `ballerinax/zoom.meetings` package offers APIs to connect and interact with Zoom API endpoints, specifically based on Zoom API v2 (https://developers.zoom.us/docs/api/meetings/).
+The `ballerinax/zoom.meetings` package offers APIs to connect and interact with Zoom API endpoints, specifically based on [Zoom API v2](https://developers.zoom.us/docs/api/meetings/).
 
 ## Setup guide
 
@@ -23,35 +23,35 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
 
 ### Step 2: Configure OAuth settings
 
-   1. **Note down your credentials**:
+   1. **Note down your credentials:**
       * Client ID
       * Client Secret
 
       ![App Credentials](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-credentials.png)
       
-   2. **Set Redirect URI**: Add your application's redirect URI
+   2. **Set Redirect URI:** Add your application's redirect URI
 
-   3. **Add Scopes**: Make sure your Zoom app has the necessary scopes for the Scheduler API:
-      * Add `scheduler:read`, `scheduler:write` and `user:read` in the scope
+   3. **Add scopes:** Make sure your Zoom app has the necessary scopes for the Meetings API:
+      * Add `meetings:read`, `meetings:write` and `user:read` in the scope
 
       ![App Scopes](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-zoom.meetings/refs/heads/main/docs/setup/resources/app-scopes.png)
 
-### Step 3: Activate the App
+### Step 3: Activate the app
  
    1. Complete all necessary information fields.
 
    2. Once, the necessary fields are correctly filled, app will be activated.
 
-### Step 4: Get User Authorization
+### Step 4: Get user authorization
 
    1. **Direct users to authorization URL** (replace `YOUR_CLIENT_ID` and `YOUR_REDIRECT_URI`):
       ```
-      https://zoom.us/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=scheduler:read scheduler:write user:read
+      https://zoom.us/oauth/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=meetings:read meetings:write user:read
       ```
 
    2. **User authorizes the app** and gets redirected to your callback URL with an authorization code
 
-   3. **Exchange authorization code for tokens**:
+   3. **Exchange authorization code for tokens:**
       ```curl
       curl -X POST https://zoom.us/oauth/token \
       -H "Authorization: Basic $(echo -n 'CLIENT_ID:CLIENT_SECRET' | base64)" \
@@ -66,7 +66,7 @@ To use the Zoom meetings connector, you must have access to the Zoom API through
          * `AUTHORIZATION_CODE` with the code received from the callback
          * `YOUR_REDIRECT_URI` with your configured redirect URI
 
-### Step 5: Verify Your Setup
+### Step 5: Verify your setup
    ```curl
       curl -X GET "https://api.zoom.us/v2/users/me" \
       -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
@@ -93,7 +93,7 @@ To use the `Zoom` connector in your Ballerina application, update the `.bal` fil
       ```bash
       refreshToken = "<refresh Token>"
       refreshUrl = "<refresh URL>"
-      userId="<user_id>"
+      userId = "<user_id>"
       clientId = "<client_id>"
       clientSecret = "<client_secret>"
       ```

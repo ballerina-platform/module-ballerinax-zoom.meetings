@@ -46,6 +46,16 @@ public function main() returns error? {
             io:println("-------------------------------");
         }
     }
+    meetings:InlineResponse20028Meetings firstMeeting = meetings[0];
+    int meetingId = <int>firstMeeting.id;
+    check zoomClient->/meetings/[meetingId].patch({
+            topic: "Updated Internship Topic via Test Ballerina",
+            startTime: "2025-09-01T15:05:00Z"
+        }
+    );
+    io:println("Meeting ", meetingId, " successfully updated.");
+    meetings:InlineResponse20013 updatedMeeting = check zoomClient->/meetings/[meetingId]();
+    io:println("Updated Topic: ", updatedMeeting.topic);
 }
 
 

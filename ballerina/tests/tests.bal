@@ -43,7 +43,7 @@ ConnectionConfig config = isLiveServer
 
 final Client zoomClient = check new Client(config, serviceUrl);
 
-int meetingId = 87163296266;
+int meetingId = 81835795193;
 
 @test:Config {
     groups: ["live_tests", "mock_tests"]
@@ -86,7 +86,7 @@ function testGetMeeting() returns error? {
     dependsOn: [testCreateMeeting]
 }
 function testUpdateMeeting() returns error? {
-    error? response = zoomClient->/meetings/[meetingId].patch(
+     check zoomClient->/meetings/[meetingId].patch(
         payload = {
             topic: "Updated New Meeting",
             startTime: "2025-09-01T15:05:00Z"
@@ -101,7 +101,7 @@ function testUpdateMeeting() returns error? {
     dependsOn: [testCreateMeeting, testUpdateMeeting, testGetMeeting, testGetMeetingInvitation]
 }
 function testDeleteMeeting() returns error? {
-    error? response = zoomClient->/meetings/[meetingId].delete();
+    check zoomClient->/meetings/[meetingId].delete();
 }
 
 @test:Config {
@@ -110,6 +110,7 @@ function testDeleteMeeting() returns error? {
 }
 function testGetMeetingInvitation() returns error? {
     MeetingInvitation response = check zoomClient->/meetings/[meetingId]/invitation();
+    test:assertTrue(response.invitation != "", msg = "Invitation should not be empty");
 }
 
 @test:Config {

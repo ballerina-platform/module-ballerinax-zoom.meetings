@@ -1,4 +1,4 @@
-# Zoom Meetings - Create a Meeting
+# Zoom Meetings - Create a meeting
 
 This example demonstrates how the **Zoom Meetings API** can be used to **create a Zoom meeting** programmatically. This is helpful for automating internal scheduling, setting up webinars, or integrating with external systems such as CRMs or helpdesks.
 
@@ -15,7 +15,7 @@ Create a `Config.toml` file in the example's root directory and, provide your Zo
 ```bash 
 refreshToken = "<refresh Token>"
 refreshUrl = "<refresh URL>"
-userId="<user_id>"
+userId = "<user_id>"
 clientId = "<client_id>"
 clientSecret = "<client_secret>"
 ```

@@ -16,7 +16,7 @@ The `ballerinax/zoom.meetings` connector provides practical examples illustratin
     ```bash 
     refreshToken = "<refresh Token>"
     refreshUrl = "<refresh URL>"
-    userId="<user_id>"
+    userId = "<user_id>"
     clientId = "<client_id>"
     clientSecret = "<client_secret>"
     ```
