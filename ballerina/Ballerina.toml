@@ -2,10 +2,10 @@
 distribution = "2201.12.0"
 org = "ballerinax"
 name = "zoom.meetings"
-version = "1.0.0"
+version = "1.0.1"
 license = ["Apache-2.0"]
 authors = ["Ballerina"]
-keywords = ["zoom", "video conference", "meetings"] 
+keywords = ["video conference", "meetings", "Vendor/Zoom", "Area/Communication", "Type/Connector"]
 icon = "icon.png" 
 repository = "https://github.com/ballerina-platform/module-ballerinax-zoom.meetings"
 
