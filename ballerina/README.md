@@ -1,7 +1,14 @@
 ## Overview
-[Zoom](https://www.zoom.com/) is a widely-used video conferencing service provided by Zoom Video Communications, enabling users to host and attend virtual meetings, webinars, and collaborate online.
+[Zoom](https://www.zoom.com/) is a video conferencing service that enables users to host and attend virtual meetings, webinars, and collaborate online. It provides a robust platform for high-quality video and audio communication across various devices.
 
-The `ballerinax/zoom.meetings` package offers APIs to connect and interact with Zoom API endpoints, specifically based on [Zoom API v2](https://developers.zoom.us/docs/api/meetings/).
+The Zoom Meetings connector offers APIs to connect and interact with Zoom API endpoints, specifically based on Zoom API v2.
+
+### Key Features
+
+- Create, update, and manage Zoom meetings programmatically
+- Access and manage webinars and virtual events
+- Support for Zoom API v2 endpoints
+- Secure integration with Zoom platform via OAuth2
 
 ## Setup guide
 
