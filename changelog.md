@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-11-08
+
 This is a major release. Code written against 1.x does not compile against 2.0.0 without changes.
 
 ### Changed
